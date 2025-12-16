@@ -14,7 +14,8 @@ const BookList = () => {
     const fetchBooks = async () => {
       try {
         const response = await bookService.getAll();
-        setBooks(response.data.data);
+setBooks(response.data?.data || []);
+
       } catch (error) {
         setAlert({
           type: 'error',
