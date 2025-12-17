@@ -30,7 +30,7 @@ setBooks(response.data?.data || []);
   }, []);
 
   const handleSelectBook = (book) => {
-    navigate(`/book/${book._id}`);
+    navigate(`/book/${book.id}`);
   };
 
   if (loading) {
@@ -61,7 +61,7 @@ setBooks(response.data?.data || []);
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {books.map((book) => (
             <BookCard
-              key={book._id}
+              key={book.id}
               book={book}
               onSelect={handleSelectBook}
             />
